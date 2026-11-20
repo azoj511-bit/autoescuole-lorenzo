@@ -1,0 +1,75 @@
+/* Autoescuole Lorenzo - Custom Styles */
+:root {
+  --color-primary: #0B3C5D;
+  --color-accent: #F28C28;
+  --color-accent-hover: #D9771E;
+  --color-bg-light: #F4F7FA;
+  --color-text-dark: #1F2933;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Custom Palette Utility Classes */
+.bg-primary { background-color: var(--color-primary); }
+.text-primary { color: var(--color-primary); }
+.border-primary { border-color: var(--color-primary); }
+
+.bg-accent { background-color: var(--color-accent); }
+.text-accent { color: var(--color-accent); }
+.border-accent { border-color: var(--color-accent); }
+.hover\:bg-accent-hover:hover { background-color: var(--color-accent-hover); }
+
+/* Glass Navigation */
+.glass-nav {
+  background: rgba(11, 60, 93, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Card Transitions */
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -5px rgba(11, 60, 93, 0.15);
+}
+
+/* Floating WhatsApp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+}
+
+/* Modal styling */
+.modal-overlay {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+}

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoescuole Lorenzo | Autoscuola Certificata & Noleggio Veicoli in Italia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#F4F7FA] text-[#1F2933]">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-blue-900/40 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#F28C28] to-yellow-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-md shadow-orange-500/20">
+            L
+          </div>
+          <div class="leading-tight">
+            <span class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
+              AUTOESCUOLE <span class="text-[#F28C28]">LORENZO</span>
+            </span>
+            <span class="text-[11px] font-medium text-blue-200 tracking-wider uppercase block">
+              Autoscuola Certificata & Noleggio Veicoli
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-semibold">
+          <a href="index.html" class="transition-colors hover:text-[#F28C28] text-slate-200">Home</a>
+          <a href="patenti.html" class="transition-colors hover:text-[#F28C28] text-slate-200">Patenti</a>
+          <a href="noleggio.html" class="transition-colors hover:text-[#F28C28] text-slate-200">Noleggio</a>
+          <a href="verifica-pratica.html" class="transition-colors hover:text-[#F28C28] text-slate-200 flex items-center gap-1">
+            <span>🔍</span> Verifica Pratica
+          </a>
+          <a href="blog.html" class="transition-colors hover:text-[#F28C28] text-slate-200">Blog</a>
+          <a href="domande-frequenti.html" class="transition-colors hover:text-[#F28C28] text-slate-200">FAQ</a>
+          <a href="contatti.html" class="transition-colors hover:text-[#F28C28] text-slate-200">Contatti</a>
+        </nav>
+
+        <!-- CTAs & Language Switcher -->
+        <div class="hidden lg:flex items-center gap-3">
+          <!-- Language Selector -->
+          <div class="flex items-center text-xs font-bold bg-blue-950/80 px-2 py-1 rounded-lg border border-blue-800 text-slate-300">
+            <span class="text-[#F28C28] cursor-pointer">IT</span>
+            <span class="mx-1 text-slate-600">|</span>
+            <span class="hover:text-white cursor-pointer" title="English">EN</span>
+            <span class="mx-1 text-slate-600">|</span>
+            <span class="hover:text-white cursor-pointer" title="Français">FR</span>
+          </div>
+
+          <!-- Account -->
+          <a href="account.html" class="text-xs font-semibold px-3 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-blue-900/50 transition">
+            👤 Area Clienti
+          </a>
+
+          <!-- Primary CTA -->
+          <a href="richiesta-patente.html" class="bg-[#F28C28] hover:bg-[#D9771E] text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg transition-transform active:scale-95 flex items-center gap-1.5">
+            <span>Richiedi Patente</span>
+            <span>➔</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center gap-2">
+          <a href="verifica-pratica.html" class="text-xs font-bold text-yellow-400 bg-blue-950 px-2.5 py-1.5 rounded-lg border border-blue-800">
+            Verifica
+          </a>
+          <button id="mobileMenuBtn" class="text-white p-2 focus:outline-none text-2xl">
+            ☰
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#0B3C5D] border-t border-blue-800/80 px-4 pt-3 pb-6 space-y-3 text-sm">
+      <a href="index.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Home</a>
+      <a href="patenti.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Patenti (18 Categorie)</a>
+      <a href="noleggio.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Noleggio Veicoli</a>
+      <a href="verifica-pratica.html" class="block font-semibold py-1 text-yellow-400">Verifica Pratica (Tracciabilità)</a>
+      <a href="blog.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Blog & Guide</a>
+      <a href="domande-frequenti.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Domande Frequenti (FAQ)</a>
+      <a href="contatti.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Contatti & Sede</a>
+      <a href="account.html" class="block font-semibold py-1 text-slate-200 hover:text-[#F28C28]">Area Personale Clienti</a>
+      <a href="admin.html" class="block font-semibold py-1 text-slate-400 hover:text-slate-200">Back-office Operatori</a>
+      <div class="pt-2">
+        <a href="richiesta-patente.html" class="block text-center w-full bg-[#F28C28] text-slate-950 font-bold py-2.5 rounded-xl shadow">
+          Inizia Richiesta Patente
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+        
+        <div class="bg-[#0B3C5D] text-white p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold text-yellow-400 uppercase tracking-widest">
+              Modulo Ufficiale di Richiesta
+            </span>
+            <span id="stepCounter" class="text-xs font-mono font-bold bg-blue-950 px-3 py-1 rounded-full text-blue-200">
+              Tappa 1 di 6
+            </span>
+          </div>
+          <h1 id="stepTitle" class="text-2xl sm:text-3xl font-black text-white">
+            1. Scegli il Tipo di Servizio
+          </h1>
+          
+          <div class="w-full bg-blue-950/80 rounded-full h-2.5 mt-6 overflow-hidden">
+            <div id="stepProgressBar" class="bg-[#F28C28] h-full transition-all duration-300" style="width: 16.66%;"></div>
+          </div>
+        </div>
+
+        <form id="permitWizardForm" onsubmit="handleWizardSubmit(event)" class="p-6 sm:p-8">
+          
+          <!-- STEP 1: SERVICE -->
+          <div id="step1" class="wizard-step space-y-4">
+            <p class="text-xs text-slate-500 mb-2">Seleziona la tipologia di pratica di cui hai bisogno:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer hover:border-[#0B3C5D] transition flex flex-col justify-between">
+                <input type="radio" name="serviceType" value="Nuovo Rilascio" checked class="accent-[#0B3C5D] mb-3">
+                <span class="font-bold text-slate-800 text-sm block">Nuovo Rilascio</span>
+                <span class="text-xs text-slate-500 mt-1 block">Prima patente o nuova categoria con esame.</span>
+              </label>
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer hover:border-[#0B3C5D] transition flex flex-col justify-between">
+                <input type="radio" name="serviceType" value="Rinnovo" class="accent-[#0B3C5D] mb-3">
+                <span class="font-bold text-slate-800 text-sm block">Rinnovo Patente</span>
+                <span class="text-xs text-slate-500 mt-1 block">Rinnovo di validità con visita medica in sede.</span>
+              </label>
+              <label class="border-2 border-slate-200 rounded-2xl p-5 cursor-pointer hover:border-[#0B3C5D] transition flex flex-col justify-between">
+                <input type="radio" name="serviceType" value="Duplicato / Biometrico" class="accent-[#0B3C5D] mb-3">
+                <span class="font-bold text-slate-800 text-sm block">Duplicato / Biometrico</span>
+                <span class="text-xs text-slate-500 mt-1 block">Per smarrimento o nuovo formato europeo.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: CATEGORY -->
+          <div id="step2" class="wizard-step hidden space-y-4">
+            <p class="text-xs text-slate-500 mb-2">Seleziona la categoria di patente:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              <label class="border rounded-2xl p-4 cursor-pointer hover:border-[#0B3C5D] flex justify-between items-center text-xs">
+                <div>
+                  <strong class="block text-[#0B3C5D] font-bold text-sm">Patente B (Auto)</strong>
+                  <span class="text-slate-500">Auto fino a 3.500 kg</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-[#F28C28] text-sm block">680 €</span>
+                  <input type="radio" name="categoryCode" value="B" checked class="accent-[#0B3C5D]">
+                </div>
+              </label>
+
+              <label class="border rounded-2xl p-4 cursor-pointer hover:border-[#0B3C5D] flex justify-between items-center text-xs">
+                <div>
+                  <strong class="block text-[#0B3C5D] font-bold text-sm">Patente A (Moto)</strong>
+                  <span class="text-slate-500">Tutte le moto</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-[#F28C28] text-sm block">580 €</span>
+                  <input type="radio" name="categoryCode" value="A" class="accent-[#0B3C5D]">
+                </div>
+              </label>
+
+              <label class="border rounded-2xl p-4 cursor-pointer hover:border-[#0B3C5D] flex justify-between items-center text-xs">
+                <div>
+                  <strong class="block text-[#0B3C5D] font-bold text-sm">Patente A2 (Moto)</strong>
+                  <span class="text-slate-500">Fino a 35 kW</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-[#F28C28] text-sm block">480 €</span>
+                  <input type="radio" name="categoryCode" value="A2" class="accent-[#0B3C5D]">
+                </div>
+              </label>
+
+              <label class="border rounded-2xl p-4 cursor-pointer hover:border-[#0B3C5D] flex justify-between items-center text-xs">
+                <div>
+                  <strong class="block text-[#0B3C5D] font-bold text-sm">Patente AM</strong>
+                  <span class="text-slate-500">Scooter e microcar</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-[#F28C28] text-sm block">380 €</span>
+                  <input type="radio" name="categoryCode" value="AM" class="accent-[#0B3C5D]">
+                </div>
+              </label>
+
+              <label class="border rounded-2xl p-4 cursor-pointer hover:border-[#0B3C5D] flex justify-between items-center text-xs">
+                <div>
+                  <strong class="block text-[#0B3C5D] font-bold text-sm">Patente C (Camion)</strong>
+                  <span class="text-slate-500">Merci pesanti</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-[#F28C28] text-sm block">1.180 €</span>
+                  <input type="radio" name="categoryCode" value="C" class="accent-[#0B3C5D]">
+                </div>
+              </label>
+
+              <label class="border rounded-2xl p-4 cursor-pointer hover:border-[#0B3C5D] flex justify-between items-center text-xs">
+                <div>
+                  <strong class="block text-[#0B3C5D] font-bold text-sm">Patente D (Autobus)</strong>
+                  <span class="text-slate-500">Trasporto persone</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-bold text-[#F28C28] text-sm block">1.280 €</span>
+                  <input type="radio" name="categoryCode" value="D" class="accent-[#0B3C5D]">
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 3: PERSONAL DATA -->
+          <div id="step3" class="wizard-step hidden space-y-4">
+            <p class="text-xs text-slate-500 mb-2">Inserisci i tuoi dati anagrafici ufficiali:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div>
+                <label class="font-bold block mb-1">Nome *</label>
+                <input type="text" id="custFirstName" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3" placeholder="Marco">
+              </div>
+              <div>
+                <label class="font-bold block mb-1">Cognome *</label>
+                <input type="text" id="custLastName" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3" placeholder="Rossi">
+              </div>
+              <div>
+                <label class="font-bold block mb-1">Data di Nascita *</label>
+                <input type="date" id="custBirthDate" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3">
+              </div>
+              <div>
+                <label class="font-bold block mb-1">Codice Fiscale *</label>
+                <input type="text" id="custCF" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 uppercase" placeholder="RSSMRC98E14H501Z">
+              </div>
+              <div>
+                <label class="font-bold block mb-1">Email *</label>
+                <input type="email" id="custEmail" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3" placeholder="marco@example.it">
+              </div>
+              <div>
+                <label class="font-bold block mb-1">Telefono / WhatsApp *</label>
+                <input type="tel" id="custPhone" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3" placeholder="+39 340 123 4567">
+              </div>
+              <div class="sm:col-span-2">
+                <label class="font-bold block mb-1">Indirizzo di Residenza *</label>
+                <input type="text" id="custAddress" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3" placeholder="Via Nazionale 10, 00184 Roma">
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: DOCUMENTS UPLOAD -->
+          <div id="step4" class="wizard-step hidden space-y-4">
+            <p class="text-xs text-slate-500 mb-2">Carica i documenti (JPG, PNG o PDF - Max 5 MB):</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div class="border-2 border-dashed border-slate-300 p-4 rounded-2xl text-center hover:bg-slate-50">
+                <span class="text-2xl block mb-1">🪪</span>
+                <label class="font-bold block mb-1">Carta d'Identità (Fronte) *</label>
+                <input type="file" class="text-[11px] text-slate-500 w-full">
+              </div>
+              <div class="border-2 border-dashed border-slate-300 p-4 rounded-2xl text-center hover:bg-slate-50">
+                <span class="text-2xl block mb-1">🪪</span>
+                <label class="font-bold block mb-1">Carta d'Identità (Retro) *</label>
+                <input type="file" class="text-[11px] text-slate-500 w-full">
+              </div>
+              <div class="border-2 border-dashed border-slate-300 p-4 rounded-2xl text-center hover:bg-slate-50">
+                <span class="text-2xl block mb-1">📸</span>
+                <label class="font-bold block mb-1">Fototessera Recente *</label>
+                <input type="file" class="text-[11px] text-slate-500 w-full">
+              </div>
+              <div class="border-2 border-dashed border-slate-300 p-4 rounded-2xl text-center hover:bg-slate-50">
+                <span class="text-2xl block mb-1">📄</span>
+                <label class="font-bold block mb-1">Codice Fiscale *</label>
+                <input type="file" class="text-[11px] text-slate-500 w-full">
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5: PROMO CODE -->
+          <div id="step5" class="wizard-step hidden space-y-4">
+            <p class="text-xs text-slate-500 mb-2">Hai un codice promozionale?</p>
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 max-w-lg mx-auto text-xs">
+              <label class="block font-bold text-slate-700 uppercase mb-2">Codice Promo</label>
+              <div class="flex gap-2">
+                <input type="text" id="promoCodeInput" placeholder="Es. BENVENUTO26" class="flex-1 uppercase bg-white border border-slate-300 rounded-xl px-4 py-2.5 font-mono font-bold">
+                <button type="button" onclick="applyPromoCode()" class="bg-[#0B3C5D] text-white px-4 py-2.5 rounded-xl font-bold hover:bg-[#0E4971]">
+                  Applica
+                </button>
+              </div>
+              <div id="promoFeedback" class="text-xs mt-2 font-semibold"></div>
+              <p class="text-[11px] text-slate-400 mt-3">
+                💡 Codice attivo: <code class="text-slate-800 font-bold bg-slate-200 px-1 py-0.5 rounded">BENVENUTO26</code> (-50 € di sconto).
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 6: RECAP -->
+          <div id="step6" class="wizard-step hidden space-y-6">
+            <div class="bg-blue-50/70 p-6 rounded-2xl border border-blue-200 space-y-3 text-xs">
+              <h3 class="text-sm font-black text-[#0B3C5D] uppercase tracking-wide">Riepilogo della Domanda</h3>
+              <div class="flex justify-between py-1 border-b border-blue-200/60">
+                <span class="text-slate-600">Servizio:</span>
+                <span id="recapService" class="font-bold text-slate-800">Nuovo Rilascio</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-blue-200/60">
+                <span class="text-slate-600">Categoria Patente:</span>
+                <span id="recapCategory" class="font-bold text-slate-800">Patente B</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-blue-200/60">
+                <span class="text-slate-600">Tariffa Corso Base:</span>
+                <span id="recapBasePrice" class="font-bold text-slate-800">680 €</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-blue-200/60">
+                <span class="text-slate-600">Frais de Gestion Fixes:</span>
+                <span class="font-bold text-slate-800">88 €</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-blue-200/60 text-emerald-700">
+                <span>Sconto Promo:</span>
+                <span id="recapDiscount" class="font-bold">-0 €</span>
+              </div>
+              <div class="flex justify-between items-center pt-2 text-sm font-black text-[#0B3C5D]">
+                <span>Totale da Saldo:</span>
+                <span id="recapTotal" class="text-2xl text-[#F28C28]">768 €</span>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" required class="mt-0.5 accent-[#0B3C5D]">
+                <span class="text-slate-600">Accetto i Termini e Condizioni e la Privacy Policy RGPD.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- SUCCESS SCREEN -->
+          <div id="stepSuccess" class="hidden text-center py-8 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">✓</div>
+            <h2 class="text-2xl font-black text-[#0B3C5D]">Domanda Registrata con Successo!</h2>
+            <p class="text-xs text-slate-600 max-w-md mx-auto">
+              La tua pratica è stata creata ed è in fase di verifica.
+            </p>
+            <div class="bg-slate-100 p-5 rounded-2xl max-w-sm mx-auto border border-slate-200">
+              <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block">Numero di Tracciabilità:</span>
+              <span id="generatedTrackingNum" class="text-2xl font-mono font-black text-[#0B3C5D] block my-1">AL-2026-XXXX</span>
+            </div>
+            <div class="pt-4 flex justify-center gap-3">
+              <a id="successTrackLink" href="verifica-pratica.html" class="bg-[#F28C28] hover:bg-[#D9771E] text-slate-950 font-bold px-6 py-3 rounded-xl text-xs transition">
+                Vai a Verifica Pratica ➔
+              </a>
+            </div>
+          </div>
+
+          <!-- Wizard Buttons -->
+          <div id="wizardButtons" class="pt-8 border-t border-slate-200 flex items-center justify-between">
+            <button type="button" id="btnPrev" onclick="prevStep()" class="text-xs font-bold text-slate-500 hover:text-slate-800 px-4 py-2 rounded-xl transition hidden">
+              ← Ritorna
+            </button>
+            <div class="ml-auto">
+              <button type="button" id="btnNext" onclick="nextStep()" class="bg-[#F28C28] hover:bg-[#D9771E] text-slate-950 font-bold px-6 py-3 rounded-xl text-xs shadow transition">
+                Continua ➔
+              </button>
+              <button type="submit" id="btnSubmit" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-7 py-3 rounded-xl text-xs shadow transition hidden">
+                Invia Domanda Definitiva ➔
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    var currentStep = 1;
+    var totalSteps = 6;
+    var appliedDiscount = 0;
+
+    var STEP_TITLES = [
+      "1. Scegli il Tipo di Servizio",
+      "2. Categoria di Patente Richiesta",
+      "3. Dati Anagrafici del Candidato",
+      "4. Caricamento Documenti d'Identità",
+      "5. Codice Promo & Sconti",
+      "6. Riepilogo & Conferma Definitiva"
+    ];
+
+    function updateWizardUI() {
+      for (var i = 1; i <= totalSteps; i++) {
+        document.getElementById('step' + i).classList.add('hidden');
+      }
+      document.getElementById('step' + currentStep).classList.remove('hidden');
+
+      document.getElementById('stepTitle').textContent = STEP_TITLES[currentStep - 1];
+      document.getElementById('stepCounter').textContent = 'Tappa ' + currentStep + ' di ' + totalSteps;
+      var progress = (currentStep / totalSteps) * 100;
+      document.getElementById('stepProgressBar').style.width = progress + '%';
+
+      document.getElementById('btnPrev').classList.toggle('hidden', currentStep === 1);
+      if (currentStep === totalSteps) {
+        document.getElementById('btnNext').classList.add('hidden');
+        document.getElementById('btnSubmit').classList.remove('hidden');
+        updateRecap();
+      } else {
+        document.getElementById('btnNext').classList.remove('hidden');
+        document.getElementById('btnSubmit').classList.add('hidden');
+      }
+    }
+
+    function nextStep() {
+      if (currentStep === 3) {
+        var fn = document.getElementById('custFirstName').value.trim();
+        var ln = document.getElementById('custLastName').value.trim();
+        var em = document.getElementById('custEmail').value.trim();
+        if (!fn || !ln || !em) {
+          alert('Compila tutti i campi anagrafici obbligatori (*).');
+          return;
+        }
+      }
+      if (currentStep < totalSteps) {
+        currentStep++;
+        updateWizardUI();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateWizardUI();
+      }
+    }
+
+    function applyPromoCode() {
+      var code = document.getElementById('promoCodeInput').value.trim().toUpperCase();
+      var fb = document.getElementById('promoFeedback');
+      if (code === 'BENVENUTO26' || code === 'LORENZO50') {
+        appliedDiscount = 50;
+        fb.className = 'text-xs mt-2 font-bold text-emerald-600';
+        fb.textContent = '✓ Codice applicato: -50 € di sconto!';
+      } else {
+        appliedDiscount = 0;
+        fb.className = 'text-xs mt-2 font-bold text-red-600';
+        fb.textContent = '✕ Codice promozionale non valido.';
+      }
+      updateRecap();
+    }
+
+    function updateRecap() {
+      var serviceEl = document.querySelector('input[name="serviceType"]:checked');
+      var catEl = document.querySelector('input[name="categoryCode"]:checked');
+      var service = serviceEl ? serviceEl.value : 'Nuovo Rilascio';
+      var catCode = catEl ? catEl.value : 'B';
+      var catData = PERMIT_PRICES[catCode] || { name: 'Patente B (Auto)', price: 680 };
+
+      var basePrice = catData.price;
+      var total = basePrice + ADMIN_FEE - appliedDiscount;
+
+      document.getElementById('recapService').textContent = service;
+      document.getElementById('recapCategory').textContent = catData.name;
+      document.getElementById('recapBasePrice').textContent = basePrice + ' €';
+      document.getElementById('recapDiscount').textContent = '-' + appliedDiscount + ' €';
+      document.getElementById('recapTotal').textContent = total + ' €';
+    }
+
+    function handleWizardSubmit(e) {
+      e.preventDefault();
+      var tracking = generateTrackingNumber();
+
+      var serviceEl = document.querySelector('input[name="serviceType"]:checked');
+      var catEl = document.querySelector('input[name="categoryCode"]:checked');
+      var service = serviceEl ? serviceEl.value : 'Nuovo Rilascio';
+      var catCode = catEl ? catEl.value : 'B';
+      var catData = PERMIT_PRICES[catCode] || { name: 'Patente B (Auto)', price: 680 };
+      var total = catData.price + ADMIN_FEE - appliedDiscount;
+
+      var newApp = {
+        trackingNumber: tracking,
+        type: 'patente',
+        service: service,
+        category: catData.name,
+        categoryCode: catCode,
+        client: {
+          firstName: document.getElementById('custFirstName').value.trim(),
+          lastName: document.getElementById('custLastName').value.trim(),
+          email: document.getElementById('custEmail').value.trim(),
+          phone: document.getElementById('custPhone').value.trim(),
+          city: document.getElementById('custAddress').value.trim()
+        },
+        servicePrice: catData.price,
+        adminFee: ADMIN_FEE,
+        discount: appliedDiscount,
+        total: total,
+        status: 'In verifica',
+        createdAt: new Date().toISOString(),
+        history: [
+          { date: new Date().toLocaleDateString('it-IT') + ' ' + new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }), status: 'In verifica', note: 'Domanda inviata e registrata nel sistema.' }
+        ]
+      };
+
+      saveApplication(newApp);
+
+      document.getElementById('step6').classList.add('hidden');
+      document.getElementById('wizardButtons').classList.add('hidden');
+      document.getElementById('stepSuccess').classList.remove('hidden');
+      document.getElementById('generatedTrackingNum').textContent = tracking;
+      document.getElementById('successTrackLink').href = 'verifica-pratica.html?code=' + tracking;
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-[#0B3C5D] text-slate-300 pt-16 pb-12 border-t-4 border-[#F28C28]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Brand & Authorization -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-lg bg-[#F28C28] text-slate-950 font-black flex items-center justify-center text-lg">
+            L
+          </div>
+          <span class="text-xl font-black text-white tracking-tight">AUTOESCUOLE LORENZO</span>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Autoscuola certificata in Italia e agenzia pratiche auto con oltre 15 anni di esperienza. Accompagniamo il candidato dall'iscrizione all'esame ufficiale con i più alti standard qualitativi.
+        </p>
+        <div class="bg-blue-950/70 p-3 rounded-xl border border-blue-800 text-[11px] text-blue-200 space-y-1">
+          <div class="font-bold text-yellow-400">Accreditamento Ufficiale:</div>
+          <div>Autorizzazione Ministeriale n° RM-4492/2026</div>
+          <div>Motorizzazione Civile di Roma • P.IVA IT16849201004</div>
+        </div>
+      </div>
+
+      <!-- Services Links -->
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-800 pb-2">
+          Servizi Patenti
+        </h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="patenti.html#moto" class="hover:text-[#F28C28] transition">Patenti Moto (AM, A1, A2, A)</a></li>
+          <li><a href="patenti.html#auto" class="hover:text-[#F28C28] transition">Patenti Auto (B1, B, B96, BE)</a></li>
+          <li><a href="patenti.html#camion" class="hover:text-[#F28C28] transition">Patenti Camion & Rimorchi (C, CE)</a></li>
+          <li><a href="patenti.html#bus" class="hover:text-[#F28C28] transition">Patenti Autobus (D, DE)</a></li>
+          <li><a href="patenti.html#cqc" class="hover:text-[#F28C28] transition">Qualificazione CQC Merci & Persone</a></li>
+          <li><a href="richiesta-patente.html?service=rinnovo" class="hover:text-[#F28C28] transition">Rinnovo Patente con Medico in Sede</a></li>
+          <li><a href="richiesta-patente.html?service=duplicato" class="hover:text-[#F28C28] transition">Duplicato Patente per Smarrimento</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick & Rental Links -->
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-800 pb-2">
+          Noleggio & Strumenti
+        </h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="noleggio.html" class="hover:text-[#F28C28] transition">Catalogo Veicoli Disponibili</a></li>
+          <li><a href="noleggio.html?cat=mercedes" class="hover:text-[#F28C28] transition">Gamme Mercedes & Premium</a></li>
+          <li><a href="noleggio.html?cat=supercar" class="hover:text-[#F28C28] transition">Supercars & Hypercars (Porsche/Ferrari)</a></li>
+          <li><a href="verifica-pratica.html" class="hover:text-[#F28C28] transition font-bold text-yellow-400">Verifica Pratica con N° Tracciabilità</a></li>
+          <li><a href="account.html" class="hover:text-[#F28C28] transition">Area Clienti & Documenti</a></li>
+          <li><a href="domande-frequenti.html" class="hover:text-[#F28C28] transition">FAQ & Requisiti d'Esame</a></li>
+          <li><a href="admin.html" class="text-slate-500 hover:text-slate-300 transition">Accesso Operatori (Back-office)</a></li>
+        </ul>
+      </div>
+
+      <!-- Direct Contact -->
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-blue-800 pb-2">
+          Contatti & Assistenza
+        </h4>
+        <div class="space-y-3 text-xs">
+          <p class="flex items-start gap-2">
+            <span>📍</span>
+            <span>Via Nazionale 142, 00184 Roma (RM), Italia</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <span>📞</span>
+            <span>Tel: +39 06 8765 4321</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <span>💬</span>
+            <span class="font-bold text-[#25D366]">WhatsApp: +39 378 030 2475</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <span>✉️</span>
+            <span>Email: info@autoescuelalorenzo.it</span>
+          </p>
+          <div class="pt-2">
+            <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 rounded-full text-[10px] font-semibold">
+              ● Assistenza Attiva Lun - Sab (08:30 - 19:30)
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Legal Bottom Bar -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-blue-900/60 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
+      <div>
+        © 2026 Autoescuole Lorenzo. Tutti i diritti riservati. Attività conforme alle norme della Motorizzazione Civile Italiana.
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="note-legali.html" class="hover:text-white transition">Note Legali</a>
+        <a href="privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+        <a href="termini-condizioni.html" class="hover:text-white transition">Termini e Condizioni</a>
+        <a href="cookie-policy.html" class="hover:text-white transition">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Permanent Floating WhatsApp Button -->
+  <a href="https://wa.me/393780302475?text=Salve,%20vorrei%20avere%20informazioni%20sui%20vostri%20servizi%20di%20patente%20o%20noleggio." target="_blank" rel="noopener" class="whatsapp-btn" title="Chatta con noi su WhatsApp">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.954-1.399C8.388 21.493 10.138 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+    </svg>
+  </a>
+
+  <!-- Real RGPD Cookie Banner -->
+  <div id="cookieBanner" class="hidden fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md bg-slate-900/95 text-white p-5 rounded-2xl border border-slate-700 shadow-2xl z-50 backdrop-blur-md">
+    <div class="flex items-start gap-3">
+      <span class="text-2xl">🍪</span>
+      <div class="text-xs leading-relaxed">
+        <h4 class="font-bold text-white mb-1">Informativa sui Cookie & Privacy</h4>
+        <p class="text-slate-300 mb-3">
+          Utilizziamo cookie tecnici necessari per il corretto funzionamento del sito e cookie analitici anonimi per migliorare la tua esperienza. Nessun cookie non essenziale viene attivato prima del tuo consenso.
+        </p>
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="acceptAllCookies()" class="bg-[#F28C28] hover:bg-[#D9771E] text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs transition">
+            Accetta Tutti
+          </button>
+          <button onclick="acceptNecessaryCookies()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-1.5 rounded-lg text-xs transition border border-slate-700">
+            Solo Necessari
+          </button>
+          <a href="cookie-policy.html" class="text-slate-400 hover:text-white underline text-[11px] ml-1">Maggiori info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
