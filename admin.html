@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back-Office Operatori | Autoescuole Lorenzo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+  
+  <header class="bg-slate-950 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-xl font-black text-white">AUTOESCUOLE LORENZO</span>
+      <span class="text-xs bg-red-600 text-white font-bold px-2 py-0.5 rounded uppercase">Back-Office</span>
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="text-slate-400">Operatore: Lorenzo (Admin)</span>
+      <a href="index.html" class="text-yellow-400 hover:underline">Torna al Sito Pubblico ➔</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Stats Row -->
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 mb-8 text-xs">
+      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+        <span class="text-slate-400 block mb-1">Pratiche Totali</span>
+        <span id="statTotal" class="text-2xl font-black text-white">2</span>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+        <span class="text-slate-400 block mb-1">In Verifica Documenti</span>
+        <span id="statVerify" class="text-2xl font-black text-yellow-400">1</span>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+        <span class="text-slate-400 block mb-1">In Corso Motorizzazione</span>
+        <span id="statCourse" class="text-2xl font-black text-blue-400">1</span>
+      </div>
+      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
+        <span class="text-slate-400 block mb-1">Frais Gestion Fisso</span>
+        <span class="text-2xl font-black text-emerald-400">88 €</span>
+      </div>
+    </div>
+
+    <!-- Applications Table -->
+    <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl">
+      <div class="p-5 border-b border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h2 class="text-base font-bold text-white">Tutte le Richieste Ricevute</h2>
+        <button onclick="exportCSV()" class="bg-slate-700 hover:bg-slate-600 text-white font-bold text-xs px-3.5 py-2 rounded-xl transition">
+          📥 Esporta CSV
+        </button>
+      </div>
+
+      <div class="overflow-x-auto text-xs">
+        <table class="w-full text-left">
+          <thead class="bg-slate-900/60 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-700">
+            <tr>
+              <th class="p-4">N° Tracciabilità</th>
+              <th class="p-4">Cliente</th>
+              <th class="p-4">Tipo Servizio</th>
+              <th class="p-4">Totale</th>
+              <th class="p-4">Stato Attuale</th>
+              <th class="p-4">Azione Cambio Stato</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody" class="divide-y divide-slate-700">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/js/storage.js"></script>
+  <script>
+    function refreshAdminTable() {
+      var apps = getApplications();
+      document.getElementById('statTotal').textContent = apps.length;
+
+      var tbody = document.getElementById('adminTableBody');
+      tbody.innerHTML = apps.map(function(a) {
+        return '<tr class="hover:bg-slate-750">' +
+          '<td class="p-4 font-mono font-bold text-yellow-400">' + a.trackingNumber + '</td>' +
+          '<td class="p-4">' +
+            '<strong class="block text-white">' + a.client.firstName + ' ' + (a.client.lastName || '') + '</strong>' +
+            '<span class="text-slate-400 text-[11px]">' + (a.client.email || '') + '</span>' +
+          '</td>' +
+          '<td class="p-4">' + (a.type === 'patente' ? a.category : 'Noleggio ' + a.vehicleName) + '</td>' +
+          '<td class="p-4 font-bold text-emerald-400">' + (a.total || 768) + ' €</td>' +
+          '<td class="p-4"><span class="bg-slate-700 text-white px-2.5 py-1 rounded-full text-[10px] font-bold">' + a.status + '</span></td>' +
+          '<td class="p-4">' +
+            '<select onchange="changeStatus(\\'' + a.trackingNumber + '\\', this.value)" class="bg-slate-900 border border-slate-600 rounded-lg p-1.5 text-xs text-white">' +
+              '<option value="">Cambia Stato...</option>' +
+              '<option value="Ricevuto">Ricevuto</option>' +
+              '<option value="In verifica">In verifica</option>' +
+              '<option value="In attesa di pagamento">In attesa di pagamento</option>' +
+              '<option value="Pagamento ricevuto">Pagamento ricevuto</option>' +
+              '<option value="In corso">In corso</option>' +
+              '<option value="Terminato">Terminato (Patente Pronta)</option>' +
+              '<option value="Rifiutato">Rifiutato</option>' +
+            '</select>' +
+          '</td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    function changeStatus(tracking, newStatus) {
+      if (!newStatus) return;
+      updateApplicationStatus(tracking, newStatus, 'Aggiornamento operatore back-office.');
+      refreshAdminTable();
+    }
+
+    function exportCSV() {
+      var apps = getApplications();
+      var csv = 'Tracking;Cliente;Tipo;Totale;Stato\\n';
+      apps.forEach(function(a) {
+        csv += a.trackingNumber + ';' + a.client.firstName + ';' + a.type + ';' + a.total + ';' + a.status + '\\n';
+      });
+      var blob = new Blob([csv], { type: 'text/csv' });
+      var url = window.URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = 'richieste_autoescuole_lorenzo.csv';
+      link.click();
+    }
+
+    document.addEventListener('DOMContentLoaded', refreshAdminTable);
+  </script>
+</body>
+</html>

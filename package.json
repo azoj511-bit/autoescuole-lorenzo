@@ -1,0 +1,11 @@
+{
+  "name": "autoescuole-lorenzo",
+  "version": "1.0.0",
+  "description": "Piattaforma Web Ufficiale Autoescuole Lorenzo - Patenti e Noleggio Veicoli",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["autoscuola", "patente", "noleggio", "roma", "italia"],
+  "author": "Autoescuole Lorenzo",
+  "license": "ISC"
+}
