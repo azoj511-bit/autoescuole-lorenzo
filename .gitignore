@@ -6,3 +6,5 @@ generate_*.py
 build_*.py
 make_*.py
 extracted_cahier_des_charges.txt
+
+.vercel
