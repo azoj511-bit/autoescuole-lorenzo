@@ -3,101 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Back-Office Operatori | Autoescuole Lorenzo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Back-Office Operatori — Autoescuole Lorenzo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background-color: #071F30; color: #E2E8F0; }
+    .admin-card { background: #0D2A42; border: 1px solid rgba(212,175,55,.2); border-radius: 12px; padding: 24px; }
+    .admin-stat { font-family: var(--font-serif); font-size: 2rem; font-weight: 900; color: var(--gold); }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: .88rem; }
+    th { background: #071F30; color: var(--gold); text-align: left; padding: 14px 16px; font-weight: 700; letter-spacing: .05em; font-size: .75rem; text-transform: uppercase; border-bottom: 1px solid rgba(212,175,55,.2); }
+    td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    tr:hover td { background: rgba(255,255,255,.02); }
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen">
-  
-  <header class="bg-slate-950 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-black text-white">AUTOESCUOLE LORENZO</span>
-      <span class="text-xs bg-red-600 text-white font-bold px-2 py-0.5 rounded uppercase">Back-Office</span>
-    </div>
-    <div class="flex items-center gap-3 text-xs">
-      <span class="text-slate-400">Operatore: Lorenzo (Admin)</span>
-      <a href="index.html" class="text-yellow-400 hover:underline">Torna al Sito Pubblico ➔</a>
+<body>
+
+  <!-- Admin Bar -->
+  <header style="background:#051622;border-bottom:1px solid rgba(212,175,55,.2);padding:16px 24px">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:36px;height:36px;background:var(--gold);color:var(--navy-deep);font-weight:900;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif)">L</div>
+        <div>
+          <span style="font-weight:800;color:white;letter-spacing:.05em">AUTOESCUOLE LORENZO</span>
+          <span style="background:var(--gold);color:var(--navy-deep);font-size:.65rem;font-weight:900;padding:2px 8px;border-radius:4px;margin-left:8px;text-transform:uppercase">Back-Office</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;font-size:.85rem">
+        <span style="color:rgba(255,255,255,.6)">Operatore: <strong>Lorenzo (Admin)</strong></span>
+        <a href="index.html" class="btn btn-outline-gold btn-sm">Torna al Sito Pubblico ↗</a>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 py-8">
-    
-    <!-- Stats Row -->
-    <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 mb-8 text-xs">
-      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
-        <span class="text-slate-400 block mb-1">Pratiche Totali</span>
-        <span id="statTotal" class="text-2xl font-black text-white">2</span>
+  <main style="padding:48px 0">
+    <div class="container">
+      
+      <!-- Stats Row -->
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="admin-card">
+          <span style="font-size:.78rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:4px">Pratiche Totali</span>
+          <div id="statTotal" class="admin-stat">2</div>
+        </div>
+        <div class="admin-card">
+          <span style="font-size:.78rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:4px">In Verifica Documenti</span>
+          <div id="statVerify" class="admin-stat" style="color:#F28C28">1</div>
+        </div>
+        <div class="admin-card">
+          <span style="font-size:.78rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:4px">In Corso Motorizzazione</span>
+          <div id="statCourse" class="admin-stat" style="color:#60A5FA">1</div>
+        </div>
+        <div class="admin-card">
+          <span style="font-size:.78rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:4px">Fee Gestione Fissa</span>
+          <div class="admin-stat" style="color:#34D399">88 €</div>
+        </div>
       </div>
-      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
-        <span class="text-slate-400 block mb-1">In Verifica Documenti</span>
-        <span id="statVerify" class="text-2xl font-black text-yellow-400">1</span>
+
+      <!-- Applications Table -->
+      <div class="admin-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+          <div>
+            <h2 style="color:white;font-size:1.3rem;margin-bottom:4px">Tutte le Richieste Ricevute</h2>
+            <p style="font-size:.82rem;color:rgba(255,255,255,.5)">Aggiornamento stato, verifiche PagoPA e comunicazioni Motorizzazione</p>
+          </div>
+          <button onclick="exportCSV()" class="btn btn-outline-gold btn-sm">
+            📥 Esporta CSV
+          </button>
+        </div>
+
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>N° Tracciabilità</th>
+                <th>Cliente</th>
+                <th>Tipo Servizio</th>
+                <th>Totale</th>
+                <th>Stato Attuale</th>
+                <th>Azione Cambio Stato</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
-        <span class="text-slate-400 block mb-1">In Corso Motorizzazione</span>
-        <span id="statCourse" class="text-2xl font-black text-blue-400">1</span>
-      </div>
-      <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700">
-        <span class="text-slate-400 block mb-1">Frais Gestion Fisso</span>
-        <span class="text-2xl font-black text-emerald-400">88 €</span>
-      </div>
+
     </div>
-
-    <!-- Applications Table -->
-    <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl">
-      <div class="p-5 border-b border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <h2 class="text-base font-bold text-white">Tutte le Richieste Ricevute</h2>
-        <button onclick="exportCSV()" class="bg-slate-700 hover:bg-slate-600 text-white font-bold text-xs px-3.5 py-2 rounded-xl transition">
-          📥 Esporta CSV
-        </button>
-      </div>
-
-      <div class="overflow-x-auto text-xs">
-        <table class="w-full text-left">
-          <thead class="bg-slate-900/60 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-700">
-            <tr>
-              <th class="p-4">N° Tracciabilità</th>
-              <th class="p-4">Cliente</th>
-              <th class="p-4">Tipo Servizio</th>
-              <th class="p-4">Totale</th>
-              <th class="p-4">Stato Attuale</th>
-              <th class="p-4">Azione Cambio Stato</th>
-            </tr>
-          </thead>
-          <tbody id="adminTableBody" class="divide-y divide-slate-700">
-            <!-- Dynamically populated -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
   </main>
 
   <script src="assets/js/storage.js"></script>
   <script>
     function refreshAdminTable() {
-      var apps = getApplications();
+      var apps = typeof getApplications === 'function' ? getApplications() : [];
+      if (!apps || apps.length === 0) {
+        apps = [
+          {
+            trackingNumber: 'LRZ-2026-0042',
+            client: { firstName: 'Mario', lastName: 'Rossi', email: 'mario.rossi@email.it' },
+            type: 'patente',
+            category: 'Patente B',
+            total: 1038,
+            status: 'In corso'
+          },
+          {
+            trackingNumber: 'LRZ-2026-0089',
+            client: { firstName: 'Laura', lastName: 'Bianchi', email: 'laura.b@email.it' },
+            type: 'noleggio',
+            vehicleName: 'Lamborghini Urus',
+            total: 1288,
+            status: 'In verifica'
+          }
+        ];
+      }
+
       document.getElementById('statTotal').textContent = apps.length;
 
       var tbody = document.getElementById('adminTableBody');
       tbody.innerHTML = apps.map(function(a) {
-        return '<tr class="hover:bg-slate-750">' +
-          '<td class="p-4 font-mono font-bold text-yellow-400">' + a.trackingNumber + '</td>' +
-          '<td class="p-4">' +
-            '<strong class="block text-white">' + a.client.firstName + ' ' + (a.client.lastName || '') + '</strong>' +
-            '<span class="text-slate-400 text-[11px]">' + (a.client.email || '') + '</span>' +
+        return '<tr>' +
+          '<td style="font-family:monospace;font-weight:800;color:var(--gold)">' + a.trackingNumber + '</td>' +
+          '<td>' +
+            '<strong style="color:white;display:block">' + a.client.firstName + ' ' + (a.client.lastName || '') + '</strong>' +
+            '<span style="color:rgba(255,255,255,.5);font-size:.78rem">' + (a.client.email || '') + '</span>' +
           '</td>' +
-          '<td class="p-4">' + (a.type === 'patente' ? a.category : 'Noleggio ' + a.vehicleName) + '</td>' +
-          '<td class="p-4 font-bold text-emerald-400">' + (a.total || 768) + ' €</td>' +
-          '<td class="p-4"><span class="bg-slate-700 text-white px-2.5 py-1 rounded-full text-[10px] font-bold">' + a.status + '</span></td>' +
-          '<td class="p-4">' +
-            '<select onchange="changeStatus(\\'' + a.trackingNumber + '\\', this.value)" class="bg-slate-900 border border-slate-600 rounded-lg p-1.5 text-xs text-white">' +
-              '<option value="">Cambia Stato...</option>' +
+          '<td>' + (a.type === 'patente' ? (a.category || 'Patente B') : 'Noleggio ' + (a.vehicleName || 'Supercar')) + '</td>' +
+          '<td style="font-weight:800;color:#34D399">' + (a.total || 88) + ' €</td>' +
+          '<td><span class="badge badge-gold">' + a.status + '</span></td>' +
+          '<td>' +
+            '<select onchange="changeStatus(\'' + a.trackingNumber + '\', this.value)" class="form-control" style="padding:6px 10px;font-size:.8rem;background:#051622;color:white;border-color:rgba(212,175,55,.4)">' +
+              '<option value="">Modifica Stato...</option>' +
               '<option value="Ricevuto">Ricevuto</option>' +
               '<option value="In verifica">In verifica</option>' +
               '<option value="In attesa di pagamento">In attesa di pagamento</option>' +
               '<option value="Pagamento ricevuto">Pagamento ricevuto</option>' +
               '<option value="In corso">In corso</option>' +
-              '<option value="Terminato">Terminato (Patente Pronta)</option>' +
+              '<option value="Terminato">Terminato (Patente Consegnata)</option>' +
               '<option value="Rifiutato">Rifiutato</option>' +
             '</select>' +
           '</td>' +
@@ -107,15 +150,17 @@
 
     function changeStatus(tracking, newStatus) {
       if (!newStatus) return;
-      updateApplicationStatus(tracking, newStatus, 'Aggiornamento operatore back-office.');
+      if (typeof updateApplicationStatus === 'function') {
+        updateApplicationStatus(tracking, newStatus, 'Aggiornamento operatore back-office.');
+      }
       refreshAdminTable();
     }
 
     function exportCSV() {
-      var apps = getApplications();
-      var csv = 'Tracking;Cliente;Tipo;Totale;Stato\\n';
+      var apps = typeof getApplications === 'function' ? getApplications() : [];
+      var csv = 'Tracking;Cliente;Tipo;Totale;Stato\n';
       apps.forEach(function(a) {
-        csv += a.trackingNumber + ';' + a.client.firstName + ';' + a.type + ';' + a.total + ';' + a.status + '\\n';
+        csv += a.trackingNumber + ';' + a.client.firstName + ';' + a.type + ';' + a.total + ';' + a.status + '\n';
       });
       var blob = new Blob([csv], { type: 'text/csv' });
       var url = window.URL.createObjectURL(blob);

@@ -5,6 +5,8 @@ __pycache__/
 generate_*.py
 build_*.py
 make_*.py
+parse_*.py
+select_*.py
 extracted_cahier_des_charges.txt
-
+Vehicule/
 .vercel
