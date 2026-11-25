@@ -372,6 +372,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </article>`);
   });
+  if (typeof setLanguage === 'function') {
+    setLanguage(currentLang);
+  }
 });
 </script>
 </body>
